@@ -17,6 +17,9 @@ Debugger.__index = Debugger
 local getfenv = getfenv
 local setfenv = setfenv
 
+-- Properties
+Debugger.Version = "1.0.0"
+
 -- Methods
 function Debugger:GetCaller(Offset: number?): Instance?
 	-- Collect debug info
@@ -103,5 +106,7 @@ return Debugger :: {
 	GetCaller: (self, Offset: number?) -> Instance?,
 	GetEnv: (self, Offset: number?) -> table,
 	SetEnv: (self, Env: table?, Extension: table) -> nil,
-	Start: () -> nil
+	Start: () -> nil,
+
+	Version: number
 }
